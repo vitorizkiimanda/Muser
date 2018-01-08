@@ -1,0 +1,51 @@
+page-onboarding {
+    .background {
+        //background-image: url('../assets/pict/welcome.png');
+        background-color: #e67e22;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    ion-slides {
+        display: block;
+        width: 100%;
+    }
+
+    .GambarSplash {
+        height: 70vh;
+    }
+
+    img {
+        position: relative;
+        
+    }
+
+    .ButtonWordWhite {
+        font-size: 6vw;
+        font-weight: 2px;
+        color: #ecf0f1;
+    }
+    .ButtonWordWhiteSmall {
+        font-size: 4vw;
+        font-weight: 2px;
+        color: #ecf0f1;
+    }
+    .ButtonLewati {
+        height: 8vw !important;
+    }
+    .ButtonMasuk {
+        height: 10vw !important;
+        border-width: 2px;
+        border-color: white;
+        background-color: #3498db;
+    }
+    .ButtonDaftar {
+        height: 10vw !important;
+    }
+
+    // div {
+    //     width: 50vw;
+    //     margin-left: auto !important;
+    //     margin-right: auto !important;
+    // }
+}
