@@ -9,23 +9,27 @@
 
 <ion-content class="background" padding>
   
+  
   <ion-slides pager>
 
     <ion-slide>
-      <img class="GambarSplash" *ngIf="image1" [src]="image1">
-      <img class="GambarSplash" *ngIf="!image1" src="assets/pict/splash.png"/>
+      <img class="LogoMuser" src="assets/pict/MuserLogo.png"/>
+      <img class="GambarSplash" src="assets/pict/MuserOnboardingPict.png"/>
+<!--       
+      <p class="WordSplash TitleOnBoarding">Onboarding Wording</p>
+      <p class="WordSplash ExplanationOnBoarding">Onboarding wording explanation</p> -->
     </ion-slide>
 
     <ion-slide>
-      <img class="GambarSplash" *ngIf="image2" [src]="image2">
-      <img class="GambarSplash" *ngIf="!image2" src="assets/pict/splash.png"/>
+        <img class="LogoMuser" src="assets/pict/MuserLogo.png"/>
+        <img class="GambarSplash" src="assets/pict/MuserOnboardingPict.png"/>
     </ion-slide>
 
     <ion-slide>
-      <img class="GambarSplash" *ngIf="image3" [src]="image3">
-      <img class="GambarSplash" *ngIf="!image3" src="assets/pict/splash.png"/>
-      
-      <ion-grid>          
+        <img class="LogoMuser" src="assets/pict/MuserLogo.png"/>
+        <img class="GambarSplash" src="assets/pict/MuserOnboardingPict.png"/>
+
+      <!-- <ion-grid>          
           <ion-row >
             <ion-col col-6>
               <button class='ButtonMasuk' block outline ion-button (click)='Masuk()'><p class="ButtonWordWhite">LOGIN</p></button>              
@@ -34,7 +38,7 @@
               <button class='ButtonDaftar' block ion-button (click)='Daftar()'><p class="ButtonWordWhite">SIGNUP</p></button>              
             </ion-col>
           </ion-row>
-      </ion-grid>
+      </ion-grid> -->
       
     </ion-slide>
 
@@ -43,5 +47,7 @@
   <div text-center>
     <button class='ButtonLewati' ion-button clear (click)='Skip()'><p class="ButtonWordWhite">Lewati</p></button>
   </div> -->
+
+  <button class='ButtonLogin' color="muserBlack" block ion-button (click)='Login()'><p class="ButtonWordWhite">Login</p></button>
 
 </ion-content>
