@@ -7,12 +7,14 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="background" padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content class="background no-scroll">
+  <img class="choosen" src="{{choosenSource}}"/>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-scroll scrollX="true" style="height: 500px" direction="x">
+    <span *ngFor="let data of images">
+        <img (click)='update(data)' class="options" src="{{data.img}}"/>
+    </span>
+  </ion-scroll>
+  
 </ion-content>

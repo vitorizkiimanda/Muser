@@ -6,11 +6,41 @@ page-wallpaper {
         background-size: cover;
     }
 
+    .no-scroll .scroll-content{
+        overflow-y: hidden;
+    }
+
     .wordNavbar{
         color: #2A3524;
         font-size: 7vw;
         font-weight: 700;
 
         font-style: italic;
+    }
+
+    .choosen {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+
+        height: 60vh;
+        width : auto;
+    }
+
+    .options {
+        height: 25vh;
+        width : auto;
+    }
+
+    ion-scroll {
+        width: 100vw;
+        display: inline-block;
+        margin-bottom: 2vh;
+    }
+
+    .scroll-zoom-wrapper{
+        white-space: nowrap;
     }
 }
