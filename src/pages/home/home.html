@@ -1,18 +1,114 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="muserYellow">
     <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
+      <ion-icon name="menu" color="muserBlack"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title text-right><span class="wordNavbar">Home</span></ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content class="background">
+  
+  <ion-slides pager>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    <ion-slide>
+      <img class="slide-image" src="assets/pict/HomeSLide.jpg"/>
+    </ion-slide>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <ion-slide>
+      <img class="slide-image" src="assets/pict/HomeSLide.jpg"/>
+    </ion-slide>
+
+    <ion-slide>
+      <img class="slide-image" src="assets/pict/HomeSLide.jpg"/>
+    </ion-slide>
+
+  </ion-slides>
+
+  <ion-grid>
+    <ion-row class="rowHeight">
+      <ion-col col-4>
+        <button class="ButtonGenre" clear ion-button (click)="openX()" block><p class="ButtonWord">Action</p></button>
+      </ion-col>
+      <ion-col col-4>
+        <button class="borderCenter" clear ion-button (click)="openX()" block><p class="ButtonWord">Commedy</p></button>
+      </ion-col>
+      <ion-col col-4>
+        <button class="ButtonGenre" clear ion-button (click)="openX()" block><p class="ButtonWord">Drama</p></button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid no-padding>
+    <ion-row no-padding class="rowHeight">
+      <ion-col no-padding col-8>
+        <img class="content-image" src="assets/pict/HomeSLide.jpg"/>
+      </ion-col>
+      <ion-col no-padding col-4>
+        <ion-row no-padding>
+          <ion-col no-padding>
+              <img class="content-image" src="assets/pict/HomeSLide.jpg"/>
+          </ion-col>
+        </ion-row>
+        <ion-row no-padding>
+            <ion-col no-padding>
+                <img class="content-image" src="assets/pict/HomeSLide.jpg"/>
+            </ion-col>
+          </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding class="rowHeight">
+        <ion-col no-padding col-4>
+          <ion-row no-padding>
+            <ion-col no-padding>
+                <img class="content-image" src="assets/pict/HomeSLide.jpg"/>
+            </ion-col>
+          </ion-row>
+          <ion-row no-padding>
+              <ion-col no-padding>
+                  <img class="content-image" src="assets/pict/HomeSLide.jpg"/>
+              </ion-col>
+            </ion-row>
+        </ion-col>
+        <ion-col no-padding col-8>
+          <img class="content-image" src="assets/pict/HomeSLide.jpg"/>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row no-padding class="rowHeight">
+      <ion-col no-padding col-8>
+        <img class="content-image" src="assets/pict/HomeSLide.jpg"/>
+      </ion-col>
+      <ion-col no-padding col-4>
+        <ion-row no-padding>
+          <ion-col no-padding>
+              <img class="content-image" src="assets/pict/HomeSLide.jpg"/>
+          </ion-col>
+        </ion-row>
+        <ion-row no-padding>
+            <ion-col no-padding>
+                <img class="content-image" src="assets/pict/HomeSLide.jpg"/>
+            </ion-col>
+          </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding class="rowHeight">
+        <ion-col no-padding col-4>
+          <ion-row no-padding>
+            <ion-col no-padding>
+                <img class="content-image" src="assets/pict/HomeSLide.jpg"/>
+            </ion-col>
+          </ion-row>
+          <ion-row no-padding>
+              <ion-col no-padding>
+                  <img class="content-image" src="assets/pict/HomeSLide.jpg"/>
+              </ion-col>
+            </ion-row>
+        </ion-col>
+        <ion-col no-padding col-8>
+          <img class="content-image" src="assets/pict/HomeSLide.jpg"/>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+  
 </ion-content>

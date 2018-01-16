@@ -1,13 +1,13 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
+  <ion-header no-border >
+    <ion-toolbar color="muserRed">
+      <ion-title><img src="assets/pict/MuserLogo.png" class='LogoSideMenu'></ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+  <ion-content class="MenuColor MenuContent">
+    <ion-list class="MenuColor">
+      <button class="MenuColorContent" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
     </ion-list>

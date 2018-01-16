@@ -1,3 +1,58 @@
 page-home {
+    .background {
+        //background-image: url('../assets/pict/welcome.png');
+        background-color: #EC2F38;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .wordNavbar{
+        color: #2A3524;
+        font-size: 7vw;
+        font-weight: 700;
+
+        font-style: italic;
+    }
+
+    //slider
+    ion-slides {
+        background: white;
+        width: 100%;
+        height: 35%;
+        display: block;
+    }
+    .slide-image {
+        max-width: 100%;
+        height: 100%;
+    }
+    .swiper-pagination-bullet-active{
+        background: white;
+        opacity: 1;
+    }
+    //slider ^^^
+
+    .ButtonWord{
+        font-size: 5vw;
+        color: white;
+    }
+
+    .ButtonGenre {
+        height: 10vw !important;
+        width: 100%;
+    }
+
+    .borderCenter {
+        position: relative;
+        right: 5%;
+        height: 10vw !important;
+        width: 110%;
+        border-right: solid white;
+        border-left: solid white;
+    }
+
+    .content-image {
+        width: 100%;
+        height: 100%;
+    }
 
 }

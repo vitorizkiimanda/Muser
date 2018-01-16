@@ -12,6 +12,11 @@ page-onboarding {
         height: 90%;
     }
 
+    .swiper-pagination-bullet-active{
+        background: white;
+        opacity: 1;
+    }
+
     .LogoMuser {
         width:50vw; /* you can use % */
         height: auto;

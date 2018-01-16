@@ -14,3 +14,37 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+.LogoSideMenu {
+    width:55vw; /* you can use % */
+    height: auto;
+    display: block; 
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom:5vh;
+}
+
+.MenuColor{
+    background-color: #EC2F38;
+}
+
+
+.MenuContent {
+    position: relative;
+    bottom: 20vh;
+}
+
+
+.MenuColorContent {
+    align-items: center;
+    background-color: #EC2F38;
+    margin: 0 5% 0 5%;
+
+    width: 85%;
+
+    //font
+    color: white;
+    font-size: 5vw;
+    font-weight: 500;
+}
