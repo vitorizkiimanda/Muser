@@ -8,11 +8,20 @@
 </ion-header>
 
 <ion-content class="background" padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <div text-wrap *ngFor="let data of chats" >
+      <div *ngIf="data.position=='left'" class="talk-bubble-left tri-right btm-left">
+        <div class="talktext">
+          <p class="chatContent">{{data.content}}</p>
+        </div>
+      </div>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+      <div *ngIf="data.position=='right'" text-right class="talk-bubble-right tri-right btm-right" text-right>
+          <div class="talktext">
+            <p class="chatContent">{{data.content}}</p>
+          </div>
+          <br>
+      </div>
+  </div>
+  
 </ion-content>
