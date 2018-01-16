@@ -81,29 +81,13 @@ export class SignupPage {
   }
 
   Login() {
-    let options: NativeTransitionOptions = {
-      direction: 'up',
-      duration: 400,
-      slowdownfactor: -1,
-      slidePixels: 20,
-      iosdelay: 100,
-      androiddelay: 150,
-      fixedPixelsTop: 0,
-      fixedPixelsBottom: 60
-    }
-
-    this.nativePageTransitions.slide(options);
+    this.nativePageTransitions.fade(null);
     this.navCtrl.setRoot(HomePage);
   }  
 
 
   goBack() {
-    
-    let options: NativeTransitionOptions = {
-      duration: 400,
-    }
-
-    this.nativePageTransitions.fade (options);
+    this.nativePageTransitions.fade(null);
     this.navCtrl.setRoot(LoginPage);
   }
 

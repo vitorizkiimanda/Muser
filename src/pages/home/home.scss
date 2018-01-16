@@ -46,8 +46,9 @@ page-home {
         right: 5%;
         height: 10vw !important;
         width: 110%;
-        border-right: solid white;
-        border-left: solid white;
+        border-right: 2px solid white;
+        border-left: 2px solid white;
+        border-radius: 0;
     }
 
     .content-image {
