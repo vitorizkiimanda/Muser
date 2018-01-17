@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="muserYellow">
+    <button ion-button menuToggle>
+      <ion-icon name="menu" color="muserBlack"></ion-icon>
+    </button>
+    <ion-title text-right><span class="wordNavbar">Profil</span></ion-title>
+  </ion-navbar>
+</ion-header>
+  
+  
+  <ion-content class="background">
+    
+      <img src="assets/pict/Profil.png" *ngIf="!image" class="Pict" (click)="updatePicture()"/>
+      <img [src]="image" *ngIf="image" class="Pict" (click)="updatePicture()"/>
+  
+  
+    <ion-item padding-right text-wrap>
+      <p class="Nama">Vito Rizki Imanda</p>
+    </ion-item>
+  
+    <ion-item padding-right text-wrap>
+      <ion-icon name="mail" item-left class="IconMail"></ion-icon>
+      <p class="Head">Email</p>
+      <p class="Konten">vitorizkiimanda@gmail.com</p>
+    </ion-item>
+    <ion-item padding-right text-wrap>
+      <ion-icon name="call" item-left class="Icon"></ion-icon>
+      <p class="Head">Nomor Telepon</p>
+      <p class="Konten">089657011491</p>
+    </ion-item>
+    <ion-item padding-right text-wrap>
+      <ion-icon name="md-map" item-left class="Icon"></ion-icon>
+      <p class="Head">Alamat</p>
+      <p class="Konten">Babakan, Dramaga, Bogor, Jawa Barat 16680</p>
+    </ion-item>
+  
+    <ion-item padding-left-right>
+      <button class='Button' color="muserBlack" ion-button block (click)='editProfil()'><p class="ButtonWordWhite">Sunting Profil</p></button>
+      <button class='Button' color="light" ion-button block (click)='logOut()'><p class="ButtonWordBlack">Keluar Akun</p></button>
+    </ion-item>
+  
+  </ion-content>
+  

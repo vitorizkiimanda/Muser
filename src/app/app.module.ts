@@ -12,7 +12,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { OnboardingPage } from '../pages/Onboarding/Onboarding';
 import { SignupPage } from '../pages/signup/signup';
 import { WallpaperPage } from '../pages/wallpaper/wallpaper';
-
+import { ProfilPage } from '../pages/profil/profil';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,6 +29,7 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
     ProfilePage,
     OnboardingPage,
     SignupPage,
+    ProfilPage,
     WallpaperPage
   ],
   imports: [
@@ -46,6 +47,7 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
     ProfilePage,
     OnboardingPage,
     SignupPage,
+    ProfilPage,
     WallpaperPage
   ],
   providers: [

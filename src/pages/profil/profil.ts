@@ -1,16 +1,13 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
-
-
-import { LoginPage } from '../login/login';
-import { HomePage } from '../home/home';
+import { OnboardingPage } from '../Onboarding/Onboarding';
 
 @Component({
-  selector: 'page-onboarding',
-  templateUrl: 'onboarding.html',
+  selector: 'page-profil',
+  templateUrl: 'profil.html',
 })
-export class OnboardingPage {
+export class ProfilPage {
 
   constructor(
     public navCtrl: NavController, 
@@ -19,18 +16,12 @@ export class OnboardingPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad OnboardingPage');
+    console.log('ionViewDidLoad ProfilPage');
   }
 
-  Login() {
+  logOut(){
     this.nativePageTransitions.fade(null);
-    this.navCtrl.setRoot(LoginPage);
+    this.navCtrl.setRoot(OnboardingPage);
   }
-
-  Guest(){
-    this.nativePageTransitions.fade(null);
-    this.navCtrl.setRoot(HomePage);
-  }
-
 
 }

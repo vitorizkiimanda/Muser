@@ -9,6 +9,7 @@ import { OnboardingPage } from '../pages/Onboarding/Onboarding';
 import { WallpaperPage } from '../pages/wallpaper/wallpaper';
 import { EventsPage } from '../pages/events/events';
 import { ChatPage } from '../pages/chat/chat';
+import { ProfilPage } from '../pages/profil/profil';
 
 @Component({
   templateUrl: 'app.html'
@@ -28,7 +29,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Wallpaper', component: WallpaperPage },
       { title: 'Events', component: EventsPage },
-      { title: 'Chat', component: ChatPage }
+      { title: 'Chat', component: ChatPage },
+      { title: 'Profil', component: ProfilPage }
     ];
 
   }
