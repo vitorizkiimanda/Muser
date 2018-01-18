@@ -8,39 +8,15 @@
 </ion-header>
 
 <ion-content class="background" padding>
-  <div class="EventsCard">
-    <img class="event-image" src="assets/pict/HomeSlide.png"/>
+  <div class="EventsCard" *ngFor="let event of events">
+    <img class="event-image" src="http://156.67.218.250:81{{event.picture}}"/>
 
     <div class="EventsContent">
-      <p class="wordContent"><ion-icon name="md-calendar" class='iconContent' color="muserBlack"></ion-icon> Friday, Dec 22 7:00 PM</p>
+      <p class="wordContent"><ion-icon name="md-calendar" class='iconContent' color="muserBlack"></ion-icon>??? Friday, Dec 22 7:00 PM</p>
 
-      <p class="wordContentTitle">IM3 Beraksi 2017</p>
+      <p class="wordContentTitle">{{event.name}}</p>
 
-      <p class="wordContent italic"><ion-icon name="md-pin" class='iconContent' color="muserBlack"></ion-icon> Monas Jakarta</p>
+      <p class="wordContent italic"><ion-icon name="md-pin" class='iconContent' color="muserBlack"></ion-icon>{{event.location}}</p>
     </div>
   </div>
-
-  <div class="EventsCard">
-      <img class="event-image" src="assets/pict/HomeSlide.png"/>
-  
-      <div class="EventsContent">
-        <p class="wordContent"><ion-icon name="md-calendar" class='iconContent' color="muserBlack"></ion-icon> Friday, Dec 22 7:00 PM</p>
-  
-        <p class="wordContentTitle">IM3 Beraksi 2017</p>
-  
-        <p class="wordContent italic"><ion-icon name="md-pin" class='iconContent' color="muserBlack"></ion-icon> Monas Jakarta</p>
-      </div>
-    </div>
-
-    <div class="EventsCard">
-        <img class="event-image" src="assets/pict/HomeSlide.png"/>
-    
-        <div class="EventsContent">
-          <p class="wordContent"><ion-icon name="md-calendar" class='iconContent' color="muserBlack"></ion-icon> Friday, Dec 22 7:00 PM</p>
-    
-          <p class="wordContentTitle">IM3 Beraksi 2017</p>
-    
-          <p class="wordContent italic"><ion-icon name="md-pin" class='iconContent' color="muserBlack"></ion-icon> Monas Jakarta</p>
-        </div>
-      </div>
 </ion-content>

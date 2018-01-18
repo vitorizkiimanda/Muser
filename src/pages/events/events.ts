@@ -11,7 +11,7 @@ import { Data } from '../../providers/data';
 })
 export class EventsPage {
 
-  token:string;
+  events:any;
 
   constructor(
     public navCtrl: NavController, 
@@ -20,13 +20,7 @@ export class EventsPage {
     public authHttp: AuthHttp,
     public http: Http) {
 
-      this.data.getToken().then((data) => {
-        this.token = data;
-        console.log(this.token);
-      })
-
       this.getEvents();
-
   }
 
   ionViewDidLoad() {
@@ -34,12 +28,17 @@ export class EventsPage {
   }
 
   getEvents() {
-    this.authHttp.get(this.data.BASE_URL+"/getproduct").subscribe(data => {
+    this.authHttp.get(this.data.BASE_URL+"/getevents").subscribe(data => {
       let response = data.json();
-      console.log(response);
+      console.log(response.rundowns);
       if(response.status==true){
 
-        // this.daily= response.data;   //ini disimpen ke variabel pasien diatas itu ,, yang udah di delacre
+        this.events=response.rundowns;
+        console.log(this.events);
+      }
+      else{
+        //alert gagal fetch data
+        console.log("error");
       }
     });
   }
