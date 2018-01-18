@@ -26,28 +26,37 @@
     <ion-item padding-right text-wrap>
       <ion-icon name="call" item-left class="Icon"></ion-icon>
       <p class="Head">Nomor Telepon</p>
-      <p class="Konten">{{hp}}</p>
+      <p *ngIf="hp" class="Konten">{{hp}}</p>
+      <p *ngIf="!hp" class="Konten">-</p>
+      
     </ion-item>
     <ion-item padding-right text-wrap>
       <ion-icon name="md-calendar" item-left class="Icon"></ion-icon>
       <p class="Head">Tanggal Ulang Tahun</p>
-      <p class="Konten">{{birthdate}}</p>
+      <p *ngIf="birthdate" class="Konten">{{birthdate}}</p>
+      <p *ngIf="!birthdate" class="Konten">-</p>
+
     </ion-item>
     <ion-item padding-right text-wrap>
       <!-- <ion-icon name="md-female" *ngIf='gender=="male"' item-left class="Icon"></ion-icon> -->
       <ion-icon name="md-transgender" item-left class="Icon"></ion-icon>
       <p class="Head">Gender</p>
-      <p class="Konten">{{gender}}</p>
+      <p *ngIf="gender" class="Konten">{{gender}}</p>
+      <p *ngIf="!gender" class="Konten">-</p>
+
     </ion-item>
     <ion-item padding-right text-wrap>
       <ion-icon name="md-heart" item-left class="Icon"></ion-icon>
       <p class="Head">Status</p>
-      <p class="Konten">{{status_kawin}}</p>
+      <p *ngIf="status_kawin" class="Konten">{{status_kawin}}</p>
+      <p *ngIf="!status_kawin" class="Konten">-</p>
     </ion-item>
     <ion-item padding-right text-wrap>
       <ion-icon name="md-map" item-left class="Icon"></ion-icon>
       <p class="Head">Domisili</p>
-      <p class="Konten">{{domisili}}</p>
+      <p *ngIf="domisili" class="Konten">{{domisili}}</p>
+      <p *ngIf="!domisili" class="Konten">-</p>
+      
     </ion-item>
   
     <ion-item padding-left-right>
