@@ -6,6 +6,8 @@ import { OnboardingPage } from '../Onboarding/Onboarding';
 import { HomePage } from '../home/home';
 import { SignupPage } from '../signup/signup';
 
+import { Http } from '@angular/http';
+import { Data } from '../../providers/data';
 
 @Component({
   selector: 'page-login',
@@ -25,6 +27,8 @@ export class LoginPage {
     private nativePageTransitions: NativePageTransitions,
     public alertCtrl: AlertController,
     public loadCtrl: LoadingController,
+    public http: Http,
+    public data: Data
   ) {
   }
 
@@ -46,12 +50,31 @@ export class LoginPage {
         loading.present();
   
         //apiLogin
-
-        loading.dismiss();
-        this.Login();
+        let input = {
+          email: this.email, 
+          password: this.password
+        };
+          this.http.post(this.data.BASE_URL+"/signin",input).subscribe(data => {
+          let response = data.json();
+          if(response.status==true){
+            console.log(response);     
+            this.data.token(response.token);   
+            this.data.login(response.user,"user");//ke lokal
+            this.Login();
+            loading.dismiss();
+          }
+          else {
+            loading.dismiss();
+             let alert = this.alertCtrl.create({
+                title: 'Gagal Masuk',
+                subTitle: 'Invalid User',      
+                buttons: ['OK']
+              });
+              alert.present();
+          }
+        //apilogin        
   
-        
-  
+      });
       }
       else{
   

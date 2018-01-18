@@ -17,6 +17,24 @@ import { ProfilPage } from '../pages/profil/profil';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
+import {HttpModule} from '@angular/http';
+import { IonicStorageModule } from '@ionic/storage';
+import { Data } from '../providers/data';
+import { AuthHttp, AuthConfig } from 'angular2-jwt';
+import { Http } from '@angular/http';
+import { Storage } from '@ionic/storage';
+
+let storage = new Storage({});
+
+
+export function getAuthHttp(http) {
+  return new AuthHttp(new AuthConfig({
+    headerPrefix: "Bearer",
+    noJwtError: true,
+    globalHeaders: [{'Authorization': 'application/json'}],
+    tokenGetter: (() => storage.get('token').then((token: string) => token)),
+  }), http);
+}
 
 @NgModule({
   declarations: [
@@ -34,6 +52,8 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -53,6 +73,12 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
   providers: [
     StatusBar,
     
+    {
+      provide: AuthHttp,
+      useFactory: getAuthHttp,
+      deps: [Http]
+    },
+    Data,
     NativePageTransitions,
 
     SplashScreen,
