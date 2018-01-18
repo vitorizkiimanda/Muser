@@ -12,11 +12,11 @@
     <img class="event-image" src="http://156.67.218.250:81{{event.picture}}"/>
 
     <div class="EventsContent">
-      <p class="wordContent"><ion-icon name="md-calendar" class='iconContent' color="muserBlack"></ion-icon>??? Friday, Dec 22 7:00 PM</p>
+      <p class="wordContent"><ion-icon name="md-calendar" class='iconContent' color="muserBlack"></ion-icon> {{event.created_at}}</p>
 
       <p class="wordContentTitle">{{event.name}}</p>
 
-      <p class="wordContent italic"><ion-icon name="md-pin" class='iconContent' color="muserBlack"></ion-icon>{{event.location}}</p>
+      <p class="wordContent italic"><ion-icon name="md-pin" class='iconContent' color="muserBlack"></ion-icon> {{event.location}}</p>
     </div>
   </div>
 </ion-content>

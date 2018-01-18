@@ -10,28 +10,44 @@
   
   <ion-content class="background">
     
-      <img src="assets/pict/Profil.png" *ngIf="!image" class="Pict" (click)="updatePicture()"/>
-      <img [src]="image" *ngIf="image" class="Pict" (click)="updatePicture()"/>
+      <img src="assets/pict/Profil.png" *ngIf="!img" class="Pict" (click)="updatePicture()"/>
+      <img [src]="img" *ngIf="img" class="Pict" (click)="updatePicture()"/>
   
   
     <ion-item padding-right text-wrap>
-      <p class="Nama">Vito Rizki Imanda</p>
+      <p class="Nama">{{name}}</p>
     </ion-item>
   
     <ion-item padding-right text-wrap>
       <ion-icon name="mail" item-left class="IconMail"></ion-icon>
       <p class="Head">Email</p>
-      <p class="Konten">vitorizkiimanda@gmail.com</p>
+      <p class="Konten">{{email}}</p>
     </ion-item>
     <ion-item padding-right text-wrap>
       <ion-icon name="call" item-left class="Icon"></ion-icon>
       <p class="Head">Nomor Telepon</p>
-      <p class="Konten">089657011491</p>
+      <p class="Konten">{{hp}}</p>
+    </ion-item>
+    <ion-item padding-right text-wrap>
+      <ion-icon name="md-calendar" item-left class="Icon"></ion-icon>
+      <p class="Head">Tanggal Ulang Tahun</p>
+      <p class="Konten">{{birthdate}}</p>
+    </ion-item>
+    <ion-item padding-right text-wrap>
+      <!-- <ion-icon name="md-female" *ngIf='gender=="male"' item-left class="Icon"></ion-icon> -->
+      <ion-icon name="md-transgender" item-left class="Icon"></ion-icon>
+      <p class="Head">Gender</p>
+      <p class="Konten">{{gender}}</p>
+    </ion-item>
+    <ion-item padding-right text-wrap>
+      <ion-icon name="md-heart" item-left class="Icon"></ion-icon>
+      <p class="Head">Status</p>
+      <p class="Konten">{{status_kawin}}</p>
     </ion-item>
     <ion-item padding-right text-wrap>
       <ion-icon name="md-map" item-left class="Icon"></ion-icon>
-      <p class="Head">Alamat</p>
-      <p class="Konten">Babakan, Dramaga, Bogor, Jawa Barat 16680</p>
+      <p class="Head">Domisili</p>
+      <p class="Konten">{{domisili}}</p>
     </ion-item>
   
     <ion-item padding-left-right>

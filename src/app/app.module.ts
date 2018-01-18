@@ -8,7 +8,6 @@ import { ListPage } from '../pages/list/list';
 import { ChatPage } from '../pages/chat/chat';
 import { EventsPage } from '../pages/events/events';
 import { LoginPage } from '../pages/login/login';
-import { ProfilePage } from '../pages/profile/profile';
 import { OnboardingPage } from '../pages/Onboarding/Onboarding';
 import { SignupPage } from '../pages/signup/signup';
 import { WallpaperPage } from '../pages/wallpaper/wallpaper';
@@ -36,6 +35,9 @@ export function getAuthHttp(http) {
   }), http);
 }
 
+console.log("ini token global :");
+console.log(storage.get('token'));
+
 @NgModule({
   declarations: [
     MyApp,
@@ -44,7 +46,6 @@ export function getAuthHttp(http) {
     ChatPage,
     EventsPage,
     LoginPage,
-    ProfilePage,
     OnboardingPage,
     SignupPage,
     ProfilPage,
@@ -64,7 +65,6 @@ export function getAuthHttp(http) {
     ChatPage,
     EventsPage,
     LoginPage,
-    ProfilePage,
     OnboardingPage,
     SignupPage,
     ProfilPage,
