@@ -10,15 +10,15 @@
 <ion-content class="background" padding>
 
   <div text-wrap *ngFor="let data of chats" >
-      <div *ngIf="data.position=='left'" class="talk-bubble-left tri-right btm-left">
+      <div *ngIf="data.id_user==user" class="talk-bubble-left tri-right btm-left">
         <div class="talktext">
-          <p class="chatContent">{{data.content}}</p>
+          <p class="chatContent">{{data.description}}</p>
         </div>
       </div>
 
-      <div *ngIf="data.position=='right'" text-right class="talk-bubble-right tri-right btm-right" text-right>
+      <div *ngIf="data.id_user!=user" text-right class="talk-bubble-right tri-right btm-right" text-right>
           <div class="talktext">
-            <p class="chatContent">{{data.content}}</p>
+            <p class="chatContent">{{data.description}}</p>
           </div>
           <br>
       </div>
