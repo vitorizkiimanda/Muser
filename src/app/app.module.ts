@@ -22,6 +22,8 @@ import { Data } from '../providers/data';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import { VideoPage } from '../pages/video/video';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 let storage = new Storage({});
 
@@ -49,6 +51,7 @@ console.log(storage.get('token'));
     OnboardingPage,
     SignupPage,
     ProfilPage,
+    VideoPage,
     WallpaperPage
   ],
   imports: [
@@ -68,6 +71,7 @@ console.log(storage.get('token'));
     OnboardingPage,
     SignupPage,
     ProfilPage,
+    VideoPage,
     WallpaperPage
   ],
   providers: [
@@ -80,6 +84,7 @@ console.log(storage.get('token'));
     },
     Data,
     NativePageTransitions,
+    ScreenOrientation,
 
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

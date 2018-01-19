@@ -41,47 +41,56 @@
   </ion-grid>
 
   <ion-grid no-padding>
-
-    <div *ngFor="let data of video">
-      <div  *ngIf="data.id%2==0">
-        <ion-row no-padding class="rowHeight">
-          <ion-col no-padding col-8>
-            <img class="content-imageBig" src="http://156.67.218.250:81{{data.picture}}"/>
-          </ion-col>
-          <ion-col no-padding col-4>
-            <ion-row no-padding>
-              <ion-col no-padding>
-                  <img class="content-imageSmall" src="http://156.67.218.250:81{{data.picture}}"/>
-              </ion-col>
-            </ion-row>
-            <ion-row no-padding>
-                <ion-col no-padding>
-                    <img class="content-imageSmall" src="http://156.67.218.250:81{{data.picture}}"/>
-                </ion-col>
-              </ion-row>
-          </ion-col>
-        </ion-row>
-      </div>
-      <div *ngIf="data.id%2!=0">
-        <ion-row no-padding class="rowHeight">
-          <ion-col no-padding col-4>
-            <ion-row no-padding>
-              <ion-col no-padding>
-                  <img class="content-imageSmall" src="http://156.67.218.250:81{{data.picture}}"/>
-              </ion-col>
-            </ion-row>
-            <ion-row no-padding>
-                <ion-col no-padding>
-                    <img class="content-imageSmall" src="http://156.67.218.250:81{{data.picture}}"/>
-                </ion-col>
-              </ion-row>
-          </ion-col>
-          <ion-col no-padding col-8>
-            <img class="content-imageBig" src="http://156.67.218.250:81{{data.picture}}"/>
-          </ion-col>
-        </ion-row>
-      </div>
-    </div>
+    <ion-row *ngFor="let data of video" no-padding class="rowHeight">
+      <ion-col no-padding col-12>
+        <img (click)="gotoVideo(data)" class="content-imageBig" src="http://156.67.218.250:81{{data.picture}}"/>
+      </ion-col>
+    </ion-row>
   </ion-grid>
+
+
+  <!-- <ion-grid no-padding>
+
+      <div *ngFor="let data of video">
+        <div  *ngIf="data.id%2==0">
+          <ion-row no-padding class="rowHeight">
+            <ion-col no-padding col-8>
+              <img class="content-imageBig" src="http://156.67.218.250:81{{data.picture}}"/>
+            </ion-col>
+            <ion-col no-padding col-4>
+              <ion-row no-padding>
+                <ion-col no-padding>
+                    <img class="content-imageSmall" src="http://156.67.218.250:81{{data.picture}}"/>
+                </ion-col>
+              </ion-row>
+              <ion-row no-padding>
+                  <ion-col no-padding>
+                      <img class="content-imageSmall" src="http://156.67.218.250:81{{data.picture}}"/>
+                  </ion-col>
+                </ion-row>
+            </ion-col>
+          </ion-row>
+        </div>
+        <div *ngIf="data.id%2!=0">
+          <ion-row no-padding class="rowHeight">
+            <ion-col no-padding col-4>
+              <ion-row no-padding>
+                <ion-col no-padding>
+                    <img class="content-imageSmall" src="http://156.67.218.250:81{{data.picture}}"/>
+                </ion-col>
+              </ion-row>
+              <ion-row no-padding>
+                  <ion-col no-padding>
+                      <img class="content-imageSmall" src="http://156.67.218.250:81{{data.picture}}"/>
+                  </ion-col>
+                </ion-row>
+            </ion-col>
+            <ion-col no-padding col-8>
+              <img class="content-imageBig" src="http://156.67.218.250:81{{data.picture}}"/>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </ion-grid> -->
   
 </ion-content>

@@ -4,6 +4,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Data } from "../providers/data";
 
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -30,7 +32,10 @@ export class MyApp {
     public statusBar: StatusBar, 
     public splashScreen: SplashScreen,
     public data: Data,
+    private screenOrientation: ScreenOrientation,
     public events: Events) {
+
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
 
       events.subscribe('user:created', (user) => {
         // user and time are the same arguments passed in `events.publish(user, time)`
