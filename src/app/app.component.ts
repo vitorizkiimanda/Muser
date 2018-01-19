@@ -1,8 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform,Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Data } from "../providers/data";
+
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -28,34 +29,40 @@ export class MyApp {
     public platform: Platform, 
     public statusBar: StatusBar, 
     public splashScreen: SplashScreen,
-    public data: Data) {
-    this.initializeApp();
+    public data: Data,
+    public events: Events) {
+
+      events.subscribe('user:created', (user) => {
+        // user and time are the same arguments passed in `events.publish(user, time)`
+        console.log('Welcome', user, 'at');
+        if(user=='user'){
+
+          console.log('ini role utama :' + this.role);
+          this.pages = [
+            { title: 'Home', component: HomePage },
+            { title: 'Wallpaper', component: WallpaperPage },
+            { title: 'Events', component: EventsPage },
+            { title: 'Chat', component: ChatPage },
+            { title: 'Profil', component: ProfilPage }
+          ];
+  
+        }
+        else {
+    
+          console.log('ini role utama :' + this.role);
+          this.pages = [
+            { title: 'Home', component: HomePage },
+            { title: 'Wallpaper', component: WallpaperPage },
+            { title: 'Events', component: EventsPage },
+            { title: 'Login', component: LoginPage }
+          ];
+        }
+      });
 
     // used for an example of ngFor and navigation
 
-    this.data.getRole().then((data) => {
-      this.role = data;
-    })
 
-
-    if(this.role == 'user'){
-      this.pages = [
-        { title: 'Home', component: HomePage },
-        { title: 'Wallpaper', component: WallpaperPage },
-        { title: 'Events', component: EventsPage },
-        { title: 'Chat', component: ChatPage },
-        { title: 'Profil', component: ProfilPage }
-      ];
-    }
-    else {
-      this.pages = [
-        { title: 'Home', component: HomePage },
-        { title: 'Wallpaper', component: WallpaperPage },
-        { title: 'Events', component: EventsPage },
-        { title: 'Login', component: LoginPage }
-      ];
-    }
-    
+    this.initializeApp();
 
   }
 
@@ -68,6 +75,13 @@ export class MyApp {
     });
     this.data.isLogin().then((value)=>{
       if(value){
+
+        this.data.getRole().then((data) => {
+          console.log(data);
+          this.events.publish('user:created', data);
+        })
+
+
         this.rootPage = HomePage;
       } else {
          this.rootPage = OnboardingPage;

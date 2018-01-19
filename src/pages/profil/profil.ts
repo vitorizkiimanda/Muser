@@ -5,6 +5,7 @@ import { OnboardingPage } from '../Onboarding/Onboarding';
 
 
 import { Data } from '../../providers/data';
+import { MyApp } from '../../app/app.component';
 
 @Component({
   selector: 'page-profil',
@@ -55,7 +56,7 @@ export class ProfilPage {
   logOut(){
     this.data.logout();
     this.nativePageTransitions.fade(null);
-    this.navCtrl.setRoot(OnboardingPage);
+    this.navCtrl.setRoot(MyApp);
   }
 
   updatePicture(){

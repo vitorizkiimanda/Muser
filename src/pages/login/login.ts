@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,LoadingController,AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,LoadingController,AlertController,Events } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 import { OnboardingPage } from '../Onboarding/Onboarding';
@@ -8,6 +8,7 @@ import { SignupPage } from '../signup/signup';
 
 import { Http } from '@angular/http';
 import { Data } from '../../providers/data';
+import { MyApp } from '../../app/app.component';
 
 @Component({
   selector: 'page-login',
@@ -28,8 +29,11 @@ export class LoginPage {
     public alertCtrl: AlertController,
     public loadCtrl: LoadingController,
     public http: Http,
-    public data: Data
+    public data: Data,
+    public events: Events
   ) {
+
+    this.data.logout();
   }
 
   ionViewDidLoad() {
@@ -58,8 +62,10 @@ export class LoginPage {
           let response = data.json();
           if(response.status==true){
             console.log(response);     
+            this.data.logout();
             this.data.token(response.token);   
             this.data.login(response.user,"user");//ke lokal
+            this.createUser("user");
             this.Login();
             loading.dismiss();
           }
@@ -113,10 +119,49 @@ export class LoginPage {
 
     Login() {
       this.nativePageTransitions.fade(null);
-      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.setRoot(MyApp);
     }
 
 
+    Guest(){
+
+      let input = {
+        email: 'drikdoank@gmail.com', 
+        password: '123456'
+      };
+        this.http.post(this.data.BASE_URL+"/signin",input).subscribe(data => {
+        let response = data.json();
+        if(response.status==true){
+          console.log(response);     
+          this.data.token(response.token);   
+          this.data.login(response.user,"guest");//ke lokal
+          this.createUser("guest");
+  
+          this.nativePageTransitions.fade(null);
+          this.navCtrl.setRoot(MyApp);
+  
+        }
+        else {
+           let alert = this.alertCtrl.create({
+              title: 'Gagal Masuk',
+              subTitle: 'Invalid User',      
+              buttons: ['OK']
+            });
+            alert.present();
+        }
+      //apilogin        
+  
+    });
+  
+  
+  
+    }
+
+
+    createUser(user) {
+      console.log('User created!')
+      this.events.publish('user:created', user);
+    }
   
 
 }
