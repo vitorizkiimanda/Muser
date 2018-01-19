@@ -8,7 +8,7 @@
 </ion-header>
   
   
-  <ion-content class="background">
+  <ion-content class="background" *ngIf="role=='user'">
     
       <img src="assets/pict/Profil.png" *ngIf="!img" class="Pict" (click)="updatePicture()"/>
       <img [src]="img" *ngIf="img" class="Pict" (click)="updatePicture()"/>
@@ -65,4 +65,19 @@
     </ion-item>
   
   </ion-content>
+
+  <ion-content class="background" *ngIf="role=='guest'">
+    
+    <img src="assets/pict/Profil.png" class="Pict"/>
+
+
+  <ion-item padding-right text-wrap>
+    <p class="Nama">GUEST</p>
+  </ion-item>
+
+  <ion-item no-lines padding-left-right>
+    <button class='Button' color="light" ion-button block (click)='logOut()'><p class="ButtonWordBlack">Masuk</p></button>
+  </ion-item>
+
+</ion-content>
   

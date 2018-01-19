@@ -11,6 +11,7 @@ import { WallpaperPage } from '../pages/wallpaper/wallpaper';
 import { EventsPage } from '../pages/events/events';
 import { ChatPage } from '../pages/chat/chat';
 import { ProfilPage } from '../pages/profil/profil';
+import { LoginPage } from '../pages/login/login';
 
 @Component({
   templateUrl: 'app.html'
@@ -18,6 +19,7 @@ import { ProfilPage } from '../pages/profil/profil';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+  role:string;
   rootPage: any;
 
   pages: Array<{title: string, component: any}>;
@@ -30,13 +32,30 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Wallpaper', component: WallpaperPage },
-      { title: 'Events', component: EventsPage },
-      { title: 'Chat', component: ChatPage },
-      { title: 'Profil', component: ProfilPage }
-    ];
+
+    this.data.getRole().then((data) => {
+      this.role = data;
+    })
+
+
+    if(this.role == 'user'){
+      this.pages = [
+        { title: 'Home', component: HomePage },
+        { title: 'Wallpaper', component: WallpaperPage },
+        { title: 'Events', component: EventsPage },
+        { title: 'Chat', component: ChatPage },
+        { title: 'Profil', component: ProfilPage }
+      ];
+    }
+    else {
+      this.pages = [
+        { title: 'Home', component: HomePage },
+        { title: 'Wallpaper', component: WallpaperPage },
+        { title: 'Events', component: EventsPage },
+        { title: 'Login', component: LoginPage }
+      ];
+    }
+    
 
   }
 

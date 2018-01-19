@@ -21,6 +21,8 @@ export class ProfilPage {
   name:string;
   status_kawin:string;
 
+  role:string;
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -36,6 +38,11 @@ export class ProfilPage {
         this.img=this.data.BASE_URL+data.img;
         this.gender=data.gender;
         this.status_kawin=data.status_kawin;
+      })
+
+      this.data.getRole().then((data) => {
+        this.role=data;
+        console.log(this.role);
       })
 
 
