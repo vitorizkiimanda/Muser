@@ -8,12 +8,13 @@
 </ion-header>
 
 <ion-content class="background no-scroll">
-  <img class="choosen" src="{{choosenSource}}"/>
+  <p class="choosenName">{{choosenName}}</p>
+  <img class="choosen" src="http://156.67.218.250:81{{choosenSource}}"/>
 
 
   <ion-scroll scrollX="true" style="height: 500px" direction="x">
     <span *ngFor="let data of images">
-        <img (click)='update(data)' class="options" src="{{data.img}}"/>
+        <img (click)='update(data)' class="options" src="http://156.67.218.250:81{{data.picture}}"/>
     </span>
   </ion-scroll>
   

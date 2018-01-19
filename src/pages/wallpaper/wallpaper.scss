@@ -22,15 +22,22 @@ page-wallpaper {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 2vh;
         margin-bottom: 2vh;
 
         height: 60vh;
         width : auto;
     }
 
+    .choosenName {
+        text-align: center;
+        color: white;
+        // font-size: 18px;
+        font-size: 6vw;
+        font-weight: 5px;
+    }
+
     .options {
-        height: 25vh;
+        height: 15vh;
         width : auto;
     }
 
