@@ -5,6 +5,9 @@ import { AuthHttp } from 'angular2-jwt';
 import { Http } from '@angular/http';
 import { Data } from '../../providers/data';
 
+
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+
 @Component({
   selector: 'page-events',
   templateUrl: 'events.html',
@@ -18,12 +21,15 @@ export class EventsPage {
     public navParams: NavParams,
     public data: Data,
     public authHttp: AuthHttp,
+    private screenOrientation: ScreenOrientation,
     public http: Http) {
 
       this.getEvents();
   }
 
   ionViewDidLoad() {
+
+    // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
     console.log('ionViewDidLoad EventsPage');
   }
 

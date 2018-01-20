@@ -5,6 +5,9 @@ import { AuthHttp } from 'angular2-jwt';
 import { Http } from '@angular/http';
 import { Data } from '../../providers/data';
 
+
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+
 @Component({
   selector: 'page-chat',
   templateUrl: 'chat.html',
@@ -19,6 +22,7 @@ export class ChatPage {
     public navParams: NavParams,
     public data: Data,
     public authHttp: AuthHttp,
+    private screenOrientation: ScreenOrientation,
     public http: Http) {
 
       this.data.getData().then((data) => {
@@ -54,6 +58,8 @@ export class ChatPage {
   }
 
   ionViewDidLoad() {
+
+    // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
     console.log('ionViewDidLoad ChatPage');
   }
 

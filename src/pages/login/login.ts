@@ -10,6 +10,9 @@ import { Http } from '@angular/http';
 import { Data } from '../../providers/data';
 import { MyApp } from '../../app/app.component';
 
+
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -27,6 +30,7 @@ export class LoginPage {
     public navParams: NavParams,
     private nativePageTransitions: NativePageTransitions,
     public alertCtrl: AlertController,
+    private screenOrientation: ScreenOrientation,
     public loadCtrl: LoadingController,
     public http: Http,
     public data: Data,
@@ -37,6 +41,8 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
+
+    // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
     this.status = "password";
     console.log('ionViewDidLoad LoginPage');
   }

@@ -5,6 +5,9 @@ import { AuthHttp } from 'angular2-jwt';
 import { Http } from '@angular/http';
 import { Data } from '../../providers/data';
 
+
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+
 @Component({
   selector: 'page-wallpaper',
   templateUrl: 'wallpaper.html',
@@ -19,6 +22,7 @@ export class WallpaperPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public data: Data,
+    private screenOrientation: ScreenOrientation,
     public authHttp: AuthHttp,
     public http: Http) {
 
@@ -57,6 +61,8 @@ export class WallpaperPage {
   }
 
   ionViewDidLoad() {
+
+    // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
     console.log('ionViewDidLoad WallpaperPage');
   }
 

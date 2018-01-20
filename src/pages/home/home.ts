@@ -29,25 +29,16 @@ export class HomePage {
     public authHttp: AuthHttp,
     private nativePageTransitions: NativePageTransitions,
     private screenOrientation: ScreenOrientation,
-    public http: Http) {
-
-      if(this.screenOrientation.type=='landscape'){
-        this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
-      }
-
-      this.screenOrientation.onChange().subscribe(
-        () => {
-            console.log("Orientation Changed");
-
-            this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
-        }
-      );
-
-      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
-      
+    public http: Http) {     
 
       this.getVideo();
       this.getWallpaper();
+  }
+
+  ionViewDidLoad() {
+
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+    console.log('ionViewDidLoad homePage');
   }
 
   

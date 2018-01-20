@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
+import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
+import { MyApp } from '../../app/app.component';
 
 @Component({
   selector: 'page-video',
@@ -13,6 +15,7 @@ export class VideoPage {
 
   constructor(
     public navCtrl: NavController, 
+    private nativePageTransitions: NativePageTransitions,
     public navParams: NavParams,
     private screenOrientation: ScreenOrientation) {
 
@@ -22,12 +25,18 @@ export class VideoPage {
 
     console.log(video);
 
-    this.screenOrientation.unlock();
   }
 
   ionViewDidLoad() {
+
+    this.screenOrientation.unlock();
     console.log('ionViewDidLoad VideoPage');
   }
+
+  ionViewWillLeave() {
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+  }
+
 
   
 

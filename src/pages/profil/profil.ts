@@ -7,6 +7,9 @@ import { OnboardingPage } from '../Onboarding/Onboarding';
 import { Data } from '../../providers/data';
 import { MyApp } from '../../app/app.component';
 
+
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+
 @Component({
   selector: 'page-profil',
   templateUrl: 'profil.html',
@@ -28,6 +31,7 @@ export class ProfilPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private nativePageTransitions: NativePageTransitions,
+    private screenOrientation: ScreenOrientation,
     public data: Data) {
 
       this.data.getData().then((data) => {
@@ -50,6 +54,8 @@ export class ProfilPage {
   }
 
   ionViewDidLoad() {
+
+    // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
     console.log('ionViewDidLoad ProfilPage');
   }
 
