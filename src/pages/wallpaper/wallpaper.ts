@@ -15,7 +15,9 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 export class WallpaperPage {
 
   choosenName:any;
-  choosenSource:any;
+  choosenSource1:any;
+  choosenSource2:any;
+  choosenSource3:any;
   images:any;
 
   constructor(
@@ -68,7 +70,9 @@ export class WallpaperPage {
 
   update(data) {
     console.log(data);
-    this.choosenSource = data.picture;
+    this.choosenSource1 = data.picture;
+    this.choosenSource2 = data.picture2;
+    this.choosenSource3 = data.picture3;
     this.choosenName = data.name;
   }
 
@@ -79,7 +83,9 @@ export class WallpaperPage {
       if(response.status==true){
 
         this.images=response.reviews;    
-        this.choosenSource = this.images[0].picture;
+        this.choosenSource1 = this.images[0].picture;
+        this.choosenSource2 = this.images[0].picture2;
+        this.choosenSource3 = this.images[0].picture3;
         this.choosenName = this.images[0].name;
         console.log(this.images);
       }

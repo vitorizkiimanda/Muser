@@ -9,7 +9,22 @@
 
 <ion-content class="background no-scroll">
   <p class="choosenName">{{choosenName}}</p>
-  <img class="choosen" src="http://156.67.218.250:81{{choosenSource}}"/>
+  <ion-slides pager>
+
+    <ion-slide>
+      <img class="slide-image" src="http://156.67.218.250:81{{choosenSource1}}"/>
+    </ion-slide>
+
+    <ion-slide>
+      <img class="slide-image" src="http://156.67.218.250:81{{choosenSource2}}"/>
+    </ion-slide>
+
+    <ion-slide>
+      <img class="slide-image" src="http://156.67.218.250:81{{choosenSource3}}"/>
+    </ion-slide>
+
+  </ion-slides>
+  <!-- <img class="choosen" src="http://156.67.218.250:81{{choosenSource}}"/> -->
 
 
   <ion-scroll scrollX="true" style="height: 500px" direction="x">

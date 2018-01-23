@@ -1,4 +1,22 @@
 page-wallpaper {
+
+    //slider
+    ion-slides {
+        // background: white;
+        width: 100%;
+        height: 60vh;
+        display: block;
+    }
+    .slide-image {
+        max-width: 100%;
+        height: 100%;
+    }
+    .swiper-pagination-bullet-active{
+        background: white;
+        opacity: 1;
+    }
+    //slider ^^^
+
     .background {
         //background-image: url('../assets/pict/welcome.png');
         background-color: #EC2F38;

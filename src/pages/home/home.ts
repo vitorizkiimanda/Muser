@@ -66,8 +66,8 @@ export class HomePage {
 
         this.images=response.reviews;    
         this.slide1 = this.images[0].picture;
-        this.slide2 = this.images[1].picture;
-        this.slide3 = this.images[2].picture;
+        this.slide2 = this.images[0].picture2;
+        this.slide3 = this.images[0].picture3;
 
       }
       else{
